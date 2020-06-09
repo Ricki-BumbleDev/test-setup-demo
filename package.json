@@ -1,0 +1,37 @@
+{
+  "name": "test-setup",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run build-server && npm run build-client && mv client/build build/static",
+    "build-client": "cd client && npm run build",
+    "build-server": "rm -rf build && tsc",
+    "dev": "concurrently -k -n=SERVER,CLIENT \"npm run dev-server\" \"npm run dev-client\"",
+    "dev-client": "cd client && npm run dev",
+    "dev-server": "ts-node-dev --respawn --no-notify src",
+    "start": "node build",
+    "test": "npm run test-api && npm run test-e2e",
+    "test-api": "jest -c tests/api/jest.config.js",
+    "test-e2e": "jest -c tests/e2e/jest.config.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.5.8",
+    "nanoid": "^3.1.9"
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^1.1.5",
+    "@types/express": "^4.17.6",
+    "@types/jest": "^26.0.0",
+    "@types/supertest": "^2.0.9",
+    "concurrently": "^5.2.0",
+    "deepmerge": "^4.2.2",
+    "jest": "^26.0.1",
+    "jest-playwright-preset": "^0.2.3",
+    "playwright": "^1.0.2",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.1.0",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.9.5"
+  }
+}
