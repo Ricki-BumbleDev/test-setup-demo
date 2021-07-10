@@ -1,6 +1,6 @@
 module.exports = {
   server: {
-    command: 'npm start',
+    command: 'yarn start',
     port: 8000
   },
   launchBrowserApp: {

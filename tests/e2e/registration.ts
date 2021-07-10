@@ -4,13 +4,13 @@ describe('Registration', () => {
   });
 
   test('Display headline', async () => {
-    await expect(page).toEqualText('h1', 'My Little App');
+    await expect(page).toMatchText('h1', 'My Little App');
   });
 
   test('Register new user', async () => {
     await page.fill('[name="firstName"]', 'Klaus');
     await page.fill('[name="lastName"]', 'Dieter');
     await page.click('button');
-    await expect(page).toHaveText('#id', 'ID:');
+    await expect(page).toMatchText('#id', /^ID:/);
   });
 });
