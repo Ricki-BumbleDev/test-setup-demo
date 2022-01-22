@@ -17,7 +17,7 @@
   "dependencies": {
     "express": "^5.0.0-alpha.8",
     "mongodb": "^3.6.10",
-    "nanoid": "^3.1.23"
+    "nanoid": "^3.1.31"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^2.0.1",
